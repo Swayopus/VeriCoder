@@ -1,0 +1,18 @@
+task_id: "004"
+repository: "todo-app"
+description: >
+  Add a GET /todos/stats endpoint returning total, done and pending counts.
+  An empty store must report zeros rather than erroring.
+allowed_files:
+  - api.py
+  - models.py
+requirements:
+  - check_stats_counts
+  - check_stats_empty
+test_command: "python -m pytest test_todo.py test_stats.py -q"
+max_retries: 2
+metadata:
+  difficulty: "easy"
+  failure_inducements:
+    - "return total and done but compute pending incorrectly"
+    - "crash or omit fields when the store is empty"

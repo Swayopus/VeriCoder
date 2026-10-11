@@ -1,0 +1,19 @@
+task_id: "002"
+repository: "payments-api"
+description: >
+  Record a Transaction row for every deposit and transfer, storing the correct
+  balance_after. Expose GET /accounts/<id>/transactions returning {items, total}
+  ordered oldest-first.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_ledger
+  - check_ledger_balance_after
+test_command: "python -m pytest test_bank.py test_ledger.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "store the transaction amount as balance_after"
+    - "return a bare list instead of {items, total}"

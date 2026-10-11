@@ -1,0 +1,21 @@
+task_id: "001"
+repository: "mini-shop"
+description: >
+  Apply a 10% discount when the cart subtotal is at least 100, and reject
+  checkout with HTTP 409 when the cart's aggregate quantity for a product
+  exceeds available stock. A rejected checkout must leave every stock value and
+  the cart unchanged; a successful checkout decrements stock and clears the cart.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_discount
+  - check_no_discount_below_threshold
+  - check_stock_guard
+test_command: "python -m pytest test_shop.py test_discount.py -q"
+max_retries: 2
+metadata:
+  difficulty: "hard"
+  failure_inducements:
+    - "applying the discount unconditionally"
+    - "decrementing stock before validating it"

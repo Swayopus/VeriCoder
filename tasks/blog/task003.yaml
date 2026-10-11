@@ -1,0 +1,18 @@
+task_id: "003"
+repository: "blog-system"
+description: >
+  Accept a tags list when creating a post, store it deduplicated preserving
+  order, return it from the API, and support filtering GET /posts?tag=x.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_tags_roundtrip
+  - check_tag_filter
+test_command: "python -m pytest test_blog.py test_tags.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "storing duplicate tags instead of deduplicating"
+    - "accepting tags but ignoring the ?tag= filter"

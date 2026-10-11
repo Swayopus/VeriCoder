@@ -1,0 +1,18 @@
+task_id: "004"
+repository: "auth-service"
+description: >
+  Enforce password strength on register: reject passwords shorter than 8
+  characters or missing a digit with HTTP 400.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_password_length
+  - check_password_needs_digit
+test_command: "python -m pytest test_auth.py test_password_length.py -q"
+max_retries: 2
+metadata:
+  difficulty: "easy"
+  failure_inducements:
+    - "check the minimum length but ignore the digit requirement"
+    - "return 200 instead of 400 for weak passwords"

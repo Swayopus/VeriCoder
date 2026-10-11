@@ -1,0 +1,18 @@
+task_id: "003"
+repository: "todo-app"
+description: >
+  Support filtering todos by completion status with ?done=true|false, and
+  reject attempts to update a todo with an empty title using HTTP 400.
+allowed_files:
+  - api.py
+  - models.py
+requirements:
+  - check_filter_by_done
+  - check_update_validation
+test_command: "python -m pytest test_todo.py test_filter.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "filter using truthiness so ?done=false returns everything"
+    - "silently ignore invalid updates instead of rejecting them"

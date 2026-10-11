@@ -1,0 +1,19 @@
+task_id: "006"
+repository: "todo-app"
+description: >
+  Add a priority field (low | medium | high) to todos, defaulting to medium and
+  exposed through create/read/list/update API responses. Updating priority must
+  persist it, and invalid values on create or update must return HTTP 400.
+allowed_files:
+  - api.py
+  - models.py
+requirements:
+  - check_priority_roundtrip
+  - check_priority_validation
+test_command: "python -m pytest test_todo.py test_priority.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "storing priority without validating the allowed values"
+    - "accepting priority but not returning it from the API"

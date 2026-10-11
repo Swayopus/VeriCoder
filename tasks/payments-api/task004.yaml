@@ -1,0 +1,19 @@
+task_id: "004"
+repository: "payments-api"
+description: >
+  Paginate GET /accounts/<id>/transactions with ?page= and ?limit=, returning
+  total/page/limit alongside the requested window. Invalid integer parameters
+  fall back to page=1 and limit=10. Without parameters return the complete ledger.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_ledger_pagination
+  - check_ledger_pagination_invalid
+test_command: "python -m pytest test_bank.py test_ledger_pagination.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "call int() on the query params without guarding against bad input"
+    - "omit total/page/limit from the paginated response"

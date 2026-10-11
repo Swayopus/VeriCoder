@@ -1,0 +1,19 @@
+task_id: "005"
+repository: "blog-system"
+description: >
+  Reject comments with an empty or whitespace-only body using HTTP 400, and
+  add DELETE /posts/<post_id>/comments/<comment_id> that removes the comment
+  and 404s for an unknown comment.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_comment_delete
+  - check_comment_validation
+test_command: "python -m pytest test_blog.py test_comments.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "adding delete but accepting empty comment bodies"
+    - "deleting the comment but leaving it in the list response"

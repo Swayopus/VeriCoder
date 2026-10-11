@@ -1,0 +1,18 @@
+task_id: "004"
+repository: "mini-shop"
+description: >
+  Charge a flat 5.0 shipping fee, waived when the subtotal is at least 50;
+  expose "shipping" and include it in the order total.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_free_shipping
+  - check_shipping_threshold
+test_command: "python -m pytest test_shop.py test_shipping.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "using a strict greater-than comparison for the free-shipping threshold"
+    - "returning shipping but not adding it to the total"

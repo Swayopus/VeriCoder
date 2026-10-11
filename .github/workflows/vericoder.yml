@@ -1,0 +1,26 @@
+name: VeriCoder framework and reference regressions
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  framework:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Framework integrity and task contracts
+        run: python -m pytest tests -p no:cacheprovider
+      - name: Synthetic good-reference regression (not PR patch grading)
+        run: python vericoder.py ci --suite all --scenario good --fail-on-fail
+      - name: Preserve evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vericoder-reference-evidence
+          path: runs/evidence/

@@ -1,0 +1,21 @@
+task_id: "002"
+repository: "todo-app"
+description: >
+  Add pagination to GET /todos. Support ?page= and ?limit= query parameters,
+  return total/page/limit alongside the requested window when parameters are
+  supplied, and preserve all items when no pagination parameters are supplied.
+  Invalid integer parameters fall back to page=1 and limit=10.
+allowed_files:
+  - api.py
+  - models.py
+requirements:
+  - check_pagination
+  - check_pagination_invalid_params
+  - check_list_backward_compatible
+test_command: "python -m pytest test_todo.py test_pagination.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "omit the total field"
+    - "break the unpaginated response shape"

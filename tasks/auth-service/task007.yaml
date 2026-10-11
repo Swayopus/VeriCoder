@@ -1,0 +1,19 @@
+task_id: "007"
+repository: "auth-service"
+description: >
+  Treat usernames case-insensitively: a user registered as "Alice" must be able
+  to log in as "alice", and registering a username that differs only in case
+  must return HTTP 409. Retain the original username casing for display.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_case_insensitive_login
+  - check_case_insensitive_unique
+test_command: "python -m pytest test_auth.py test_case_login.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "match logins case-insensitively but leave uniqueness case-sensitive"
+    - "lowercase the stored username and lose the original casing"

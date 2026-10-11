@@ -1,0 +1,18 @@
+task_id: "001"
+repository: "blog-system"
+description: >
+  Add page/limit pagination to GET /posts (including total/page/limit in the
+  response) and make deleting a post also delete its comments.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_blog_pagination
+  - check_cascade_delete
+test_command: "python -m pytest test_blog.py test_blog_pagination.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "leaving orphaned comments after deleting a post"
+    - "returning total but not honouring the requested window"

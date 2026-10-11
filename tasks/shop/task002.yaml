@@ -1,0 +1,18 @@
+task_id: "002"
+repository: "mini-shop"
+description: >
+  Add a 5% tax on the cart subtotal, exposed as "tax" and added into the
+  order total, rounded to two decimals.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_tax
+  - check_tax_rounding
+test_command: "python -m pytest test_shop.py test_tax.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "applying tax without rounding the monetary result"
+    - "returning tax but forgetting to include it in the total"

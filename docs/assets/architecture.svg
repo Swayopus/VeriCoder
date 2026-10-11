@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1270" viewBox="0 0 1440 1270" role="img" aria-labelledby="architecture-title architecture-description">
+  <title id="architecture-title">VeriCoder architecture: coding, verification, bounded feedback and evidence</title>
+  <desc id="architecture-description">CLI loads trusted tasks. Experiment orchestration prepares a disposable Git baseline. Scripted or DeepSeek agents use file tools and a fixed pytest action. Recorded tool events and baseline diffs feed tests, diff, trace and requirement verification. The report yields PASS, FAIL, WARNING or INVALID and bounded feedback. Evidence bundles, optional SQLite, dashboard and blind review support evaluation. The optional SWE-bench harness has not produced external grades. Local execution is not a security sandbox; the Docker backend has not been validated in this environment.</desc>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto-start-reverse"><polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/></marker>
+    <marker id="feedback-arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#fb7185"/></marker>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/></pattern>
+  </defs>
+  <style>text { font-family: 'JetBrains Mono', 'Cascadia Code', Consolas, monospace; }</style>
+  <rect width="1440" height="1270" fill="#020617"/>
+  <rect width="1440" height="1270" fill="url(#grid)"/>
+  <!-- Boundaries describe code ownership; they are not security guarantees. -->
+  <rect x="20" y="190" width="1400" height="940" rx="12" fill="rgba(251, 191, 36, 0.025)" stroke="#fbbf24" stroke-width="1" stroke-dasharray="8,4"/>
+  <rect x="60" y="580" width="1060" height="180" rx="12" fill="none" stroke="#334155" stroke-width="1"/>
+  <rect x="60" y="970" width="1060" height="140" rx="12" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,4"/>
+  <!-- All connectors precede component masks and labels. -->
+<path d="M 160 140 V 258" fill="none" stroke="#22d3ee" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path d="M 510 140 V 165 H 220 V 258" fill="none" stroke="#22d3ee" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path d="M 260 300 H 338" fill="none" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path d="M 540 300 H 618" fill="none" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path d="M 820 300 H 898" fill="none" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path d="M 440 258 V 230 H 1190 V 142" fill="none" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#arrowhead)" marker-start="url(#arrowhead)"/>
+<path d="M 160 340 V 385 H 390 V 418" fill="none" stroke="#fb7185" stroke-width="1.5" stroke-dasharray="5,5" marker-end="url(#feedback-arrow)"/>
+<path d="M 440 418 V 342" fill="none" stroke="#fb7185" stroke-width="1.5" stroke-dasharray="5,5" marker-end="url(#feedback-arrow)"/>
+<path d="M 720 340 V 418" fill="none" stroke="#fb923c" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path d="M 1000 340 V 418" fill="none" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path d="M 720 500 V 550" fill="none" stroke="#fb923c" stroke-width="1.5"/>
+<path d="M 1000 500 V 550" fill="none" stroke="#34d399" stroke-width="1.5"/>
+<path d="M 265 550 H 1045" fill="none" stroke="#64748b" stroke-width="1.5"/>
+<path d="M 265 550 V 638" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path d="M 525 550 V 638" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path d="M 785 550 V 638" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path d="M 1045 550 V 638" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path d="M 285 680 H 338" fill="none" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path d="M 545 680 H 598" fill="none" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path d="M 805 680 H 858" fill="none" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path d="M 182.5 720 V 790" fill="none" stroke="#64748b" stroke-width="1.5"/>
+<path d="M 442.5 720 V 790" fill="none" stroke="#64748b" stroke-width="1.5"/>
+<path d="M 702.5 720 V 790" fill="none" stroke="#64748b" stroke-width="1.5"/>
+<path d="M 962.5 720 V 790" fill="none" stroke="#64748b" stroke-width="1.5"/>
+<path d="M 182.5 790 H 962.5" fill="none" stroke="#64748b" stroke-width="1.5"/>
+<path d="M 840 790 V 818" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path d="M 620 865 H 40 V 460 H 338" fill="none" stroke="#fb7185" stroke-width="1.5" stroke-dasharray="5,5" marker-end="url(#feedback-arrow)"/>
+<path d="M 1060 865 H 1160 V 490 H 1198" fill="none" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path d="M 1290 550 V 628" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="4,4" marker-end="url(#arrowhead)"/>
+<path d="M 1200 520 H 1180 V 840 H 1198" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" marker-end="url(#arrowhead)"/>
+<path d="M 340 1050 H 388" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" marker-end="url(#arrowhead)"/>
+<path d="M 690 1050 H 738" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" marker-end="url(#arrowhead)"/>
+<text x="60" y="32" fill="#f8fafc" font-size="16" font-weight="600" text-anchor="start">VeriCoder / verified coding workflow</text>
+<text x="1380" y="32" fill="#94a3b8" font-size="9" font-weight="400" text-anchor="end">ENGINEERING PROTOTYPE  /  2026-10-11</text>
+<text x="36" y="211" fill="#fbbf24" font-size="10" font-weight="600" text-anchor="start">PYTHON FRAMEWORK  /  LOCAL HOST</text>
+<text x="1400" y="211" fill="#94a3b8" font-size="8" font-weight="400" text-anchor="end">Code ownership boundary - not a security sandbox</text>
+<text x="300" y="286" fill="#94a3b8" font-size="8" font-weight="400" text-anchor="middle">task + workspace</text>
+<text x="580" y="286" fill="#94a3b8" font-size="8" font-weight="400" text-anchor="middle">tool calls</text>
+<text x="860" y="286" fill="#94a3b8" font-size="8" font-weight="400" text-anchor="middle">file I/O</text>
+<text x="1000" y="223" fill="#fbbf24" font-size="8" font-weight="400" text-anchor="middle">HTTPS / request + response</text>
+<text x="268" y="377" fill="#fb7185" font-size="8" font-weight="400" text-anchor="middle">initialise loop</text>
+<text x="452" y="385" fill="#fb7185" font-size="8" font-weight="400" text-anchor="start">retry</text>
+<text x="735" y="385" fill="#fb923c" font-size="8" font-weight="400" text-anchor="start">events + test output</text>
+<text x="1015" y="385" fill="#34d399" font-size="8" font-weight="400" text-anchor="start">fixed base diff</text>
+<text x="300" y="539" fill="#94a3b8" font-size="8" font-weight="400" text-anchor="start">workspace + diff + recorded tool events</text>
+<text x="80" y="604" fill="#34d399" font-size="12" font-weight="600" text-anchor="start">Verification Engine</text>
+<text x="80" y="622" fill="#94a3b8" font-size="9" font-weight="400" text-anchor="start">verifier/engine.py</text>
+<text x="855" y="809" fill="#94a3b8" font-size="8" font-weight="400" text-anchor="start">combine checks</text>
+<text x="65" y="845" fill="#fb7185" font-size="8" font-weight="400" text-anchor="start">structured feedback + previous patch</text>
+<text x="65" y="861" fill="#fb7185" font-size="8" font-weight="400" text-anchor="start">reset fixed baseline; stop at retry budget or INVALID</text>
+<text x="1073" y="854" fill="#a78bfa" font-size="8" font-weight="400" text-anchor="start">persist</text>
+<text x="1302" y="595" fill="#22d3ee" font-size="8" font-weight="400" text-anchor="start">optional UI</text>
+<text x="1189" y="752" fill="#94a3b8" font-size="8" font-weight="400" text-anchor="start">blind export</text>
+<text x="78" y="991" fill="#94a3b8" font-size="10" font-weight="600" text-anchor="start">OPTIONAL EXTERNAL BENCHMARK PATH  /  experiments/swebench.py</text>
+<g data-module="vericoder.py">
+<rect x="60" y="60" width="200" height="80" rx="6" fill="#0f172a"/>
+<rect x="60" y="60" width="200" height="80" rx="6" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+<text x="160.0" y="83" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">CLI / Python API</text>
+<text x="160.0" y="102" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">vericoder.py</text>
+<text x="160.0" y="117" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">demo / run / study / eval</text>
+</g>
+<g data-module="tasks/">
+<rect x="340" y="60" width="340" height="80" rx="6" fill="#0f172a"/>
+<rect x="340" y="60" width="340" height="80" rx="6" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+<text x="510.0" y="83" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">Task Contracts + Repository Seeds</text>
+<text x="510.0" y="102" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">tasks/&lt;suite&gt;/*.yaml + repositories/*</text>
+<text x="510.0" y="117" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">30 Flask tasks / trusted requirement checks</text>
+</g>
+<g data-module="agent/deepseek.py">
+<rect x="1000" y="60" width="380" height="80" rx="6" fill="#0f172a"/>
+<rect x="1000" y="60" width="380" height="80" rx="6" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5"/>
+<text x="1190.0" y="83" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">DeepSeek Provider</text>
+<text x="1190.0" y="102" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Optional external HTTPS API</text>
+<text x="1190.0" y="117" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Credentials from environment or private file</text>
+</g>
+<g data-module="experiments/paired.py">
+<rect x="60" y="260" width="200" height="80" rx="6" fill="#0f172a"/>
+<rect x="60" y="260" width="200" height="80" rx="6" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5"/>
+<text x="160.0" y="283" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">Experiment Runner</text>
+<text x="160.0" y="302" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">experiments/runner.py</text>
+<text x="160.0" y="317" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Paired study: shared first patch</text>
+</g>
+<g data-module="agent/">
+<rect x="340" y="260" width="200" height="80" rx="6" fill="#0f172a"/>
+<rect x="340" y="260" width="200" height="80" rx="6" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5"/>
+<text x="440.0" y="283" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">Coding Agent</text>
+<text x="440.0" y="302" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">agent/base.py</text>
+<text x="440.0" y="317" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">ScriptedAgent / DeepSeekAgent</text>
+</g>
+<g data-module="tools/executor.py">
+<rect x="620" y="260" width="200" height="80" rx="6" fill="#0f172a"/>
+<rect x="620" y="260" width="200" height="80" rx="6" fill="rgba(136, 19, 55, 0.4)" stroke="#fb7185" stroke-width="1.5"/>
+<text x="720.0" y="283" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">Tool Executor</text>
+<text x="720.0" y="302" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">tools/executor.py</text>
+<text x="720.0" y="317" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">file tools + fixed pytest action</text>
+</g>
+<g data-module="core/workspace.py">
+<rect x="900" y="260" width="200" height="80" rx="6" fill="#0f172a"/>
+<rect x="900" y="260" width="200" height="80" rx="6" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5"/>
+<text x="1000.0" y="283" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">Disposable Workspace</text>
+<text x="1000.0" y="302" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">core/workspace.py</text>
+<text x="1000.0" y="317" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Copied seed + owned Git baseline</text>
+</g>
+<g data-module="feedback/loop.py">
+<rect x="340" y="420" width="200" height="80" rx="6" fill="#0f172a"/>
+<rect x="340" y="420" width="200" height="80" rx="6" fill="rgba(136, 19, 55, 0.4)" stroke="#fb7185" stroke-width="1.5"/>
+<text x="440.0" y="443" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">Bounded Feedback</text>
+<text x="440.0" y="462" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">feedback/loop.py</text>
+<text x="440.0" y="477" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">tests / requirements / full</text>
+</g>
+<g data-module="trace/recorder.py">
+<rect x="620" y="420" width="200" height="80" rx="6" fill="#0f172a"/>
+<rect x="620" y="420" width="200" height="80" rx="6" fill="rgba(251, 146, 60, 0.3)" stroke="#fb923c" stroke-width="1.5"/>
+<text x="720.0" y="443" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">Trace Recorder</text>
+<text x="720.0" y="462" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">trace/recorder.py</text>
+<text x="720.0" y="477" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Tool events; not all syscalls</text>
+</g>
+<g data-module="verifier/diff_analyzer.py">
+<rect x="900" y="420" width="200" height="80" rx="6" fill="#0f172a"/>
+<rect x="900" y="420" width="200" height="80" rx="6" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5"/>
+<text x="1000.0" y="443" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">Baseline + Patch</text>
+<text x="1000.0" y="462" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">verifier/diff_analyzer.py</text>
+<text x="1000.0" y="477" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Initial commit kept by framework</text>
+</g>
+<g data-module="verifier/test_validator.py">
+<rect x="80" y="640" width="205" height="80" rx="6" fill="#0f172a"/>
+<rect x="80" y="640" width="205" height="80" rx="6" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5"/>
+<text x="182.5" y="663" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">1 / Test Validation</text>
+<text x="182.5" y="682" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">pytest + original node registry</text>
+<text x="182.5" y="697" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Missing evidence becomes INVALID</text>
+</g>
+<g data-module="verifier/diff_analyzer.py">
+<rect x="340" y="640" width="205" height="80" rx="6" fill="#0f172a"/>
+<rect x="340" y="640" width="205" height="80" rx="6" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5"/>
+<text x="442.5" y="663" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">2 / Diff Analysis</text>
+<text x="442.5" y="682" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Changed files + allowed scope</text>
+<text x="442.5" y="697" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Test-file edits become warnings</text>
+</g>
+<g data-module="trace/analyzer.py">
+<rect x="600" y="640" width="205" height="80" rx="6" fill="#0f172a"/>
+<rect x="600" y="640" width="205" height="80" rx="6" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5"/>
+<text x="702.5" y="663" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">3 / Trace Analysis</text>
+<text x="702.5" y="682" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Recorded edits + test execution</text>
+<text x="702.5" y="697" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Can flag edit / run / restore</text>
+</g>
+<g data-module="verifier/requirement_checker.py">
+<rect x="860" y="640" width="205" height="80" rx="6" fill="#0f172a"/>
+<rect x="860" y="640" width="205" height="80" rx="6" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5"/>
+<text x="962.5" y="663" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">4 / Requirements</text>
+<text x="962.5" y="682" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Trusted behavioural assertions</text>
+<text x="962.5" y="697" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Checks completion beyond tests</text>
+</g>
+<g data-module="core/models.py">
+<rect x="620" y="820" width="440" height="90" rx="6" fill="#0f172a"/>
+<rect x="620" y="820" width="440" height="90" rx="6" fill="rgba(136, 19, 55, 0.4)" stroke="#fb7185" stroke-width="1.5"/>
+<text x="840.0" y="843" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">Verification Report</text>
+<text x="840.0" y="862" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">PASS / FAIL / WARNING / INVALID</text>
+<text x="840.0" y="877" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">WARNING = functional pass + review signals</text>
+<text x="840.0" y="892" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Warnings request review; they do not prove cheating</text>
+</g>
+<g data-module="report/storage.py">
+<rect x="1200" y="430" width="180" height="120" rx="6" fill="#0f172a"/>
+<rect x="1200" y="430" width="180" height="120" rx="6" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+<text x="1290.0" y="453" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">Evidence Store</text>
+<text x="1290.0" y="472" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">core/artifacts.py</text>
+<text x="1290.0" y="487" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">JSON + patch + trace + ZIP</text>
+<text x="1290.0" y="502" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Sources / manifest / hashes</text>
+<text x="1290.0" y="517" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">SQLite optional: --save</text>
+</g>
+<g data-module="dashboard/app.py">
+<rect x="1200" y="630" width="180" height="70" rx="6" fill="#0f172a"/>
+<rect x="1200" y="630" width="180" height="70" rx="6" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+<text x="1290.0" y="653" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">Dashboard</text>
+<text x="1290.0" y="672" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Streamlit / optional install</text>
+<text x="1290.0" y="687" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">dashboard/app.py</text>
+</g>
+<g data-module="report/annotations.py">
+<rect x="1200" y="790" width="180" height="100" rx="6" fill="#0f172a"/>
+<rect x="1200" y="790" width="180" height="100" rx="6" fill="rgba(30, 41, 59, 0.5)" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="1290.0" y="813" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">Blind Review</text>
+<text x="1290.0" y="832" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">report/annotations.py</text>
+<text x="1290.0" y="847" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Two reviewers + adjudication</text>
+<text x="1290.0" y="862" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">No human labels collected yet</text>
+</g>
+<g data-module="experiments/swebench.py">
+<rect x="80" y="1010" width="260" height="80" rx="6" fill="#0f172a"/>
+<rect x="80" y="1010" width="260" height="80" rx="6" fill="rgba(30, 41, 59, 0.5)" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="210.0" y="1033" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">SWE-bench Bridge</text>
+<text x="210.0" y="1052" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">fetch / import / prediction validation</text>
+<text x="210.0" y="1067" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">10 external instances downloaded</text>
+</g>
+<g data-module="experiments/swebench.py">
+<rect x="390" y="1010" width="300" height="80" rx="6" fill="#0f172a"/>
+<rect x="390" y="1010" width="300" height="80" rx="6" fill="rgba(30, 41, 59, 0.5)" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="540.0" y="1033" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">Official Harness</text>
+<text x="540.0" y="1052" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Optional swebench package + Docker</text>
+<text x="540.0" y="1067" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Docker execution not validated here</text>
+</g>
+<g data-module="experiments/swebench.py">
+<rect x="740" y="1010" width="350" height="80" rx="6" fill="#0f172a"/>
+<rect x="740" y="1010" width="350" height="80" rx="6" fill="rgba(30, 41, 59, 0.5)" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="915.0" y="1033" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">External Evaluation Status</text>
+<text x="915.0" y="1052" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">Gold preflight: BLOCKED (missing runtime)</text>
+<text x="915.0" y="1067" fill="#cbd5e1" font-size="9" font-weight="400" text-anchor="middle">No external agent grades or success rate</text>
+</g>
+<text x="40" y="1164" fill="#f8fafc" font-size="10" font-weight="600" text-anchor="start">LEGEND</text>
+<rect x="40" y="1178" width="16" height="10" rx="2" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee"/>
+<text x="64" y="1187" fill="#94a3b8" font-size="8" font-weight="400" text-anchor="start">Inputs / UI</text>
+<rect x="235" y="1178" width="16" height="10" rx="2" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399"/>
+<text x="259" y="1187" fill="#94a3b8" font-size="8" font-weight="400" text-anchor="start">Framework logic</text>
+<rect x="445" y="1178" width="16" height="10" rx="2" fill="rgba(136, 19, 55, 0.4)" stroke="#fb7185"/>
+<text x="469" y="1187" fill="#94a3b8" font-size="8" font-weight="400" text-anchor="start">Execution / retry controls</text>
+<rect x="750" y="1178" width="16" height="10" rx="2" fill="rgba(251, 146, 60, 0.3)" stroke="#fb923c"/>
+<text x="774" y="1187" fill="#94a3b8" font-size="8" font-weight="400" text-anchor="start">Recorded events</text>
+<rect x="985" y="1178" width="16" height="10" rx="2" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa"/>
+<text x="1009" y="1187" fill="#94a3b8" font-size="8" font-weight="400" text-anchor="start">Evidence / storage</text>
+<rect x="1230" y="1178" width="16" height="10" rx="2" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24"/>
+<text x="1254" y="1187" fill="#94a3b8" font-size="8" font-weight="400" text-anchor="start">External API</text>
+<path d="M 40 1211 H 67" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<text x="80" y="1214" fill="#94a3b8" font-size="8" font-weight="400" text-anchor="start">Data / results</text>
+<path d="M 235 1211 H 262" fill="none" stroke="#fb7185" stroke-width="1.5" stroke-dasharray="5,5" marker-end="url(#feedback-arrow)"/>
+<text x="275" y="1214" fill="#94a3b8" font-size="8" font-weight="400" text-anchor="start">Bounded feedback</text>
+<path d="M 445 1211 H 472" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4" marker-end="url(#arrowhead)"/>
+<text x="485" y="1214" fill="#94a3b8" font-size="8" font-weight="400" text-anchor="start">Optional integration</text>
+<text x="40" y="1245" fill="#94a3b8" font-size="9" font-weight="400" text-anchor="start">Execution: local is not a security sandbox. Docker backend exists; genuine Docker execution is still unverified.</text>
+</svg>

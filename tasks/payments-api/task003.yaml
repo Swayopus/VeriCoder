@@ -1,0 +1,19 @@
+task_id: "003"
+repository: "payments-api"
+description: >
+  Make POST /transfers idempotent via the Idempotency-Key header: replaying the
+  same key must not apply the transfer twice and must return the first result.
+  Distinct keys must each apply.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_idempotency
+  - check_distinct_keys
+test_command: "python -m pytest test_bank.py test_idempotency.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "ignore the Idempotency-Key header entirely"
+    - "ignore the key and apply the transfer on every request"

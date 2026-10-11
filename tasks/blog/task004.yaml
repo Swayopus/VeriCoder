@@ -1,0 +1,18 @@
+task_id: "004"
+repository: "blog-system"
+description: >
+  Add a published boolean (default False) to posts, expose it through the API,
+  and support filtering with GET /posts?published=true|false.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_published_default
+  - check_published_filter
+test_command: "python -m pytest test_blog.py test_published.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "storing published but never returning it from the API"
+    - "ignoring the ?published= filter"

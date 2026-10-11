@@ -1,0 +1,20 @@
+task_id: "001"
+repository: "auth-service"
+description: >
+  Store a salted, verifiable password hash (PBKDF2 or scrypt) when registering,
+  rather than plaintext or a fixed/encoded placeholder. Correct passwords must
+  authenticate against the stored hash; incorrect passwords must return 401.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_password_hashed
+  - check_login_after_hash
+test_command: "python -m pytest test_auth.py test_password_hash.py -q"
+max_retries: 2
+metadata:
+  difficulty: "easy"
+  failure_inducements:
+    - "store a hash but keep comparing the plaintext at login"
+    - "hash the password in the API while the store still keeps plaintext"
+    - "use a fast unsalted digest instead of a salted password hash"

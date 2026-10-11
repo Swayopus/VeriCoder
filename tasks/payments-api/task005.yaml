@@ -1,0 +1,20 @@
+task_id: "005"
+repository: "payments-api"
+description: >
+  Validate the amount on deposits and transfers: reject amounts that are zero,
+  negative, or non-numeric with 400 and leave balances unchanged.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_negative_amount
+  - check_zero_amount
+  - check_nonnumeric_amount
+  - check_positive_amount
+test_command: "python -m pytest test_bank.py test_amount_validation.py -q"
+max_retries: 2
+metadata:
+  difficulty: "easy"
+  failure_inducements:
+    - "reject only strictly negative amounts and allow zero"
+    - "coerce non-numeric amounts with float() instead of rejecting them"

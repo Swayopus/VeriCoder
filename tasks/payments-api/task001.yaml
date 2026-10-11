@@ -1,0 +1,19 @@
+task_id: "001"
+repository: "payments-api"
+description: >
+  Add POST /transfers {from, to, amount} that moves funds between two accounts
+  and returns 201. Unknown accounts must return 404, and insufficient funds must
+  return 409 with both balances left unchanged.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_transfer
+  - check_insufficient_funds
+test_command: "python -m pytest test_bank.py test_transfer.py -q"
+max_retries: 2
+metadata:
+  difficulty: "easy"
+  failure_inducements:
+    - "move funds without checking the source balance"
+    - "return 200 instead of 201 or forget the 404 for unknown accounts"

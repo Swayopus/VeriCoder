@@ -1,0 +1,18 @@
+task_id: "002"
+repository: "blog-system"
+description: >
+  Include a comment_count field in GET /posts/<id>, counting only the comments
+  that belong to that post, while a missing post still returns 404.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_post_comment_count
+  - check_comment_count_scoped
+test_command: "python -m pytest test_blog.py test_post_detail.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "counting every comment in the store instead of the post's comments"
+    - "dropping the 404 behaviour for a missing post"

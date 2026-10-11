@@ -1,0 +1,20 @@
+task_id: "006"
+repository: "auth-service"
+description: >
+  Rate limit consecutive wrong-password logins separately per username: the
+  first three failures return 401 and subsequent wrong-password attempts return
+  429. A correct password must still log in successfully, even while limited,
+  and reset that username's failure counter.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_login_failure
+  - check_rate_limit
+test_command: "python -m pytest test_auth.py test_login_failure.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "count failed logins but never enforce the 429 threshold"
+    - "rate limit on the first failure instead of the fourth attempt"

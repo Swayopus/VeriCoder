@@ -1,0 +1,18 @@
+task_id: "003"
+repository: "mini-shop"
+description: >
+  Support coupon codes at checkout: the JSON body may carry {"coupon": "SAVE10"}
+  which takes 10% off the subtotal as "discount"; unknown coupons are ignored.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_coupon_applied
+  - check_unknown_coupon_ignored
+test_command: "python -m pytest test_shop.py test_coupon.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "applying a discount for any non-empty coupon code"
+    - "reading the coupon but never threading it into checkout"

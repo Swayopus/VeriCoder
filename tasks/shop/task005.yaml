@@ -1,0 +1,20 @@
+task_id: "005"
+repository: "mini-shop"
+description: >
+  Add POST /products/<id>/restock accepting {"quantity": n}, adding n to the
+  product stock and returning the product; quantities must be positive integers,
+  and non-positive or invalid quantities
+  must be rejected with HTTP 400.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_restock
+  - check_restock_validation
+test_command: "python -m pytest test_shop.py test_restock.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "accepting zero or negative restock quantities"
+    - "restocking without returning the updated product"

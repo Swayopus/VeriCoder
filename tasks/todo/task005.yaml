@@ -1,0 +1,18 @@
+task_id: "005"
+repository: "todo-app"
+description: >
+  Add DELETE /todos/completed that removes only finished todos and reports how
+  many were deleted, leaving pending todos untouched.
+allowed_files:
+  - api.py
+  - models.py
+requirements:
+  - check_clear_completed
+  - check_only_completed_removed
+test_command: "python -m pytest test_todo.py test_clear_completed.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "deleting every todo instead of only the completed ones"
+    - "returning a count that does not match what was removed"

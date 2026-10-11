@@ -1,0 +1,19 @@
+task_id: "002"
+repository: "auth-service"
+description: >
+  Reject duplicate usernames: registering a username that already exists must
+  return HTTP 409 (CONFLICT) while registering distinct usernames keeps
+  returning 201.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_register_ok
+  - check_duplicate_username
+test_command: "python -m pytest test_auth.py test_register_distinct.py -q"
+max_retries: 2
+metadata:
+  difficulty: "easy"
+  failure_inducements:
+    - "add the duplicate check in the API but let the store still accept duplicates"
+    - "reject every second registration instead of only the same username"

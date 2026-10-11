@@ -1,0 +1,429 @@
+{
+  "schema_version": 1,
+  "published_summary_date": "2026-10-11",
+  "project": "VeriCoder",
+  "summary_kind": "sanitized_aggregate_snapshot",
+  "raw_evidence_in_repository": false,
+  "engineering_tests": {
+    "previous_full_run_passed": 179,
+    "subsequently_added_unique_cases_passed": 6,
+    "total_unique_validated_cases": 185,
+    "current_collection_count": 185,
+    "single_full_run_of_all_185_claimed": false,
+    "source_record": "IMPLEMENTATION.md"
+  },
+  "synthetic_challenges": {
+    "source": "synthetic",
+    "repositories": 5,
+    "tasks": 30,
+    "mutations_per_task": 11,
+    "total": 330,
+    "valid_scored": 300,
+    "invalid": 30,
+    "unlabelled_valid": 0,
+    "positive": 150,
+    "negative": 150,
+    "label_origin": "scripted_scenario_contract",
+    "human_reviewed": false,
+    "cumulative_matrices": [
+      {
+        "added_signal": "tests",
+        "active_signals": [
+          "tests"
+        ],
+        "tp": 0,
+        "fp": 0,
+        "fn": 150,
+        "tn": 150
+      },
+      {
+        "added_signal": "requirements",
+        "active_signals": [
+          "tests",
+          "requirements"
+        ],
+        "tp": 60,
+        "fp": 0,
+        "fn": 90,
+        "tn": 150
+      },
+      {
+        "added_signal": "diff",
+        "active_signals": [
+          "tests",
+          "requirements",
+          "diff"
+        ],
+        "tp": 120,
+        "fp": 0,
+        "fn": 30,
+        "tn": 150
+      },
+      {
+        "added_signal": "trace",
+        "active_signals": [
+          "tests",
+          "requirements",
+          "diff",
+          "trace"
+        ],
+        "tp": 150,
+        "fp": 0,
+        "fn": 0,
+        "tn": 150
+      }
+    ],
+    "per_mutation": [
+      {
+        "mutation": "benign_comment",
+        "preset_label_needs_review": 0,
+        "total": 30,
+        "valid_scored": 30,
+        "invalid": 0,
+        "cumulative_flags": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "mutation": "benign_debugging",
+        "preset_label_needs_review": 0,
+        "total": 30,
+        "valid_scored": 30,
+        "invalid": 0,
+        "cumulative_flags": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "mutation": "benign_new_test",
+        "preset_label_needs_review": 0,
+        "total": 30,
+        "valid_scored": 30,
+        "invalid": 0,
+        "cumulative_flags": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "mutation": "extra_writes",
+        "preset_label_needs_review": 1,
+        "total": 30,
+        "valid_scored": 30,
+        "invalid": 0,
+        "cumulative_flags": [
+          0,
+          0,
+          30,
+          30
+        ]
+      },
+      {
+        "mutation": "failed_edit",
+        "preset_label_needs_review": 0,
+        "total": 30,
+        "valid_scored": 30,
+        "invalid": 0,
+        "cumulative_flags": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "mutation": "good",
+        "preset_label_needs_review": 0,
+        "total": 30,
+        "valid_scored": 30,
+        "invalid": 0,
+        "cumulative_flags": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "mutation": "hollow_test",
+        "preset_label_needs_review": 1,
+        "total": 30,
+        "valid_scored": 0,
+        "invalid": 30,
+        "cumulative_flags": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "mutation": "modify_test",
+        "preset_label_needs_review": 1,
+        "total": 30,
+        "valid_scored": 30,
+        "invalid": 0,
+        "cumulative_flags": [
+          0,
+          30,
+          30,
+          30
+        ]
+      },
+      {
+        "mutation": "omit_requirement",
+        "preset_label_needs_review": 1,
+        "total": 30,
+        "valid_scored": 30,
+        "invalid": 0,
+        "cumulative_flags": [
+          0,
+          30,
+          30,
+          30
+        ]
+      },
+      {
+        "mutation": "transient_test_edit",
+        "preset_label_needs_review": 1,
+        "total": 30,
+        "valid_scored": 30,
+        "invalid": 0,
+        "cumulative_flags": [
+          0,
+          0,
+          0,
+          30
+        ]
+      },
+      {
+        "mutation": "wrong_file",
+        "preset_label_needs_review": 1,
+        "total": 30,
+        "valid_scored": 30,
+        "invalid": 0,
+        "cumulative_flags": [
+          0,
+          0,
+          30,
+          30
+        ]
+      }
+    ],
+    "trace_only_additional_flags": {
+      "total": 30,
+      "true_positives": 30,
+      "false_positives": 0,
+      "mutations": {
+        "transient_test_edit": 30
+      }
+    },
+    "bootstrap_interval_status": "not_estimable_degenerate",
+    "limitations": [
+      "Preset mutation labels are not independent human judgments.",
+      "Repeated mutations on each task and tasks sharing repositories are dependent.",
+      "No population recall, false-positive-rate or superiority-to-strengthened-CI claim."
+    ]
+  },
+  "offline_paired": {
+    "run_id": "offline-paired-20261011",
+    "task": "todo-app/002",
+    "design": "shared-first-attempt",
+    "scripted_repeats": 2,
+    "condition_results": 8,
+    "distinct_first_patch_hashes": [
+      "c2f108fdada0f406ae5db4b3f0d2589fa2f029ea74069ceb1e2d72f4db761aae"
+    ],
+    "conditions": [
+      {
+        "condition": "no_retry",
+        "results": 2,
+        "successful": 0,
+        "verdict_counts": {
+          "FAIL": 2
+        },
+        "retries_per_result": [
+          0,
+          0
+        ]
+      },
+      {
+        "condition": "tests_retry",
+        "results": 2,
+        "successful": 0,
+        "verdict_counts": {
+          "FAIL": 2
+        },
+        "retries_per_result": [
+          0,
+          0
+        ]
+      },
+      {
+        "condition": "requirements_retry",
+        "results": 2,
+        "successful": 2,
+        "verdict_counts": {
+          "PASS": 2
+        },
+        "retries_per_result": [
+          1,
+          1
+        ]
+      },
+      {
+        "condition": "full_retry",
+        "results": 2,
+        "successful": 2,
+        "verdict_counts": {
+          "PASS": 2
+        },
+        "retries_per_result": [
+          1,
+          1
+        ]
+      }
+    ],
+    "independent_held_out_acceptance_supplied": false,
+    "limitation": "Deterministic repeats use the same first patch; after any feedback the scripted agent applies a prewritten good implementation. This validates routing, not LLM learning."
+  },
+  "real_agent_pilot": {
+    "run_id": "deepseek-pilot-20261011-d",
+    "task": "todo-app/002",
+    "design": "shared-first-attempt",
+    "shared_first_attempts": 1,
+    "condition_results": 4,
+    "shared_first_patch_sha256": "4525aeb2ce006f1b12234102f79c1b0dcc75a06e2c4f407034920aa2e6211b62",
+    "requested_model": "deepseek-chat",
+    "returned_models": [
+      "deepseek-flash"
+    ],
+    "temperature": 0.0,
+    "max_steps_per_agent_execution": 10,
+    "max_output_tokens_per_response": 2048,
+    "max_retries_per_condition": 1,
+    "successful_api_requests": 5,
+    "provider_reported_actual_tokens": 9052,
+    "usage_complete": true,
+    "shared_first_usage_counted_once": true,
+    "conditions": [
+      {
+        "condition": "no_retry",
+        "results": 1,
+        "successful": 1,
+        "verdict_counts": {
+          "PASS": 1
+        },
+        "retries_per_result": [
+          0
+        ]
+      },
+      {
+        "condition": "tests_retry",
+        "results": 1,
+        "successful": 1,
+        "verdict_counts": {
+          "PASS": 1
+        },
+        "retries_per_result": [
+          0
+        ]
+      },
+      {
+        "condition": "requirements_retry",
+        "results": 1,
+        "successful": 1,
+        "verdict_counts": {
+          "PASS": 1
+        },
+        "retries_per_result": [
+          0
+        ]
+      },
+      {
+        "condition": "full_retry",
+        "results": 1,
+        "successful": 1,
+        "verdict_counts": {
+          "PASS": 1
+        },
+        "retries_per_result": [
+          0
+        ]
+      }
+    ],
+    "warning_count": 0,
+    "independent_held_out_acceptance_supplied": false,
+    "human_review_labels_supplied": false,
+    "limitation": "One task with one shared first attempt; all conditions pass without retries. It is not four independent model successes and provides no feedback improvement estimate. Tokens cover this successful pilot only, not prior invalid debugging batches or an exact bill."
+  },
+  "external_benchmark": {
+    "dataset": "princeton-nlp/SWE-bench_Lite",
+    "split": "test",
+    "downloaded_instances": 10,
+    "selection": "ordered source slice; not a random or representative sample",
+    "contains_gold_patches": true,
+    "preflight_run_id": "swebench-lite-gold-preflight-20261011",
+    "gold_mode": true,
+    "status": "blocked",
+    "reasons": [
+      "The swebench package is not installed in this Python environment",
+      "Docker CLI is not installed"
+    ],
+    "scores": null,
+    "real_agent_end_to_end_evaluation_completed": false,
+    "limitation": "The first ten downloaded tasks are not a representative sample. Gold mode is an environment preflight, not an agent result."
+  },
+  "runtime_limits": {
+    "default_backend": "local",
+    "local_is_security_sandbox": false,
+    "docker_backend_implemented": true,
+    "real_docker_integration_validated_in_recorded_environment": false,
+    "dashboard_browser_acceptance_completed": false
+  },
+  "source_files": [
+    {
+      "kind": "synthetic",
+      "project_relative_identity": "reports/challenges-20261011-final.json",
+      "sha256": "d33babdd7850822415c97e14b6ed6c6852cccaa6af2921545717383abe46b892",
+      "included_in_git_repository": false
+    },
+    {
+      "kind": "offline",
+      "project_relative_identity": "runs/evidence/paired/offline-paired-20261011/study.json",
+      "sha256": "d8fda0218ca0c544232e8113985183f7d56c9551910f5f0e34f751b549f5d1d6",
+      "included_in_git_repository": false
+    },
+    {
+      "kind": "pilot",
+      "project_relative_identity": "runs/evidence/paired/deepseek-pilot-20261011-d/study.json",
+      "sha256": "82f6cd1eabf781b9964b812f2b6716554e56c4e1b22ec7198497538cf51c6549",
+      "included_in_git_repository": false
+    },
+    {
+      "kind": "external_instances",
+      "project_relative_identity": "reports/benchmarks/swebench-lite-10-20261011.json",
+      "sha256": "030edc8eecbc19889cf4ec706329f0dbb56499fb916d86338ceb45c8b2d7d4c5",
+      "included_in_git_repository": false
+    },
+    {
+      "kind": "external_preflight",
+      "project_relative_identity": "reports/benchmarks/evaluations/swebench-lite-gold-preflight-20261011/evaluation.json",
+      "sha256": "72a911c7e5a97cdec01b0524b6a18ca271c40af58756f3817756dee5d2b4422f",
+      "included_in_git_repository": false
+    }
+  ],
+  "publication_notes": [
+    "Only selected aggregate fields are published; raw patches, traces, provider responses and machine paths are omitted.",
+    "Source hashes identify retained local artifacts but do not let a reader audit omitted raw evidence.",
+    "This summary was derived from existing records without paid model calls."
+  ]
+}

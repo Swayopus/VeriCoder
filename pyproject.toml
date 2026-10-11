@@ -1,0 +1,48 @@
+[project]
+name = "vericoder"
+version = "0.1.0"
+description = "A Verification-driven Evaluation Framework for Coding Agents"
+requires-python = ">=3.10"
+dependencies = [
+    "PyYAML>=6.0",
+    "requests>=2.31",
+    "pytest>=8.0",
+    "Flask>=3.0",
+]
+
+[project.optional-dependencies]
+dashboard = ["streamlit>=1.35"]
+dev = ["ruff>=0.4", "pytest>=8.0"]
+
+[project.scripts]
+vericoder = "vericoder:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["config", "vericoder"]
+
+[tool.setuptools.packages.find]
+include = [
+    "agent*",
+    "core*",
+    "dashboard*",
+    "experiments*",
+    "feedback*",
+    "report*",
+    "sandbox*",
+    "tasks*",
+    "tools*",
+    "trace*",
+    "verifier*",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

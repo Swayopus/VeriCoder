@@ -1,0 +1,19 @@
+task_id: "003"
+repository: "auth-service"
+description: >
+  Give sessions an expiry: create_session must record a future expires_at for
+  the token and GET /me must reject a token whose expires_at has already passed
+  with HTTP 401.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_token_valid
+  - check_token_expired
+test_command: "python -m pytest test_auth.py test_token_valid.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "store expires_at on the session but never consult it in get_session"
+    - "expire valid sessions immediately by mis-computing the deadline"

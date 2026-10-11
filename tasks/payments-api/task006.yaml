@@ -1,0 +1,20 @@
+task_id: "006"
+repository: "payments-api"
+description: >
+  Add GET /accounts/<id>/statement returning {inflow, outflow, net, count}.
+  inflow is the sum of credits, outflow the sum of debits/transfers out, and
+  net is inflow minus outflow.
+allowed_files:
+  - models.py
+  - api.py
+requirements:
+  - check_statement_flows
+  - check_statement_net
+  - check_statement_count
+test_command: "python -m pytest test_bank.py test_statement.py -q"
+max_retries: 2
+metadata:
+  difficulty: "medium"
+  failure_inducements:
+    - "compute net as inflow + outflow"
+    - "count every transaction as inflow regardless of direction"
